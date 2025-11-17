@@ -9,11 +9,27 @@
 @use "dependencies";
 
 /**
+ * Import functions
+ */
+@use "functions";
+
+/**
  * Import layouts
  * It's a best practice to use a different partial for each page
  */
+// @use "layouts/seccion";
 
- @use "layouts/home";
+/**
+ * Import pages
+ */
+@use "pages/home";
+
+/**
+ * Import components
+ */
+@use "components/footer";
+@use "components/header";
+@use "components/animaciones";
 
 /**
  * Do NOT include anything else in this file!

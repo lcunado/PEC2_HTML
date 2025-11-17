@@ -1,0 +1,11 @@
+@use "sass:math";
+
+// Convierte píxeles a rem
+@function rem($px) {
+  @return $px / 16 * 1rem;
+}
+
+// Convierte píxeles a em en relación a un tamaño base
+@function em($px, $base: 16) {
+  @return $px / $base * 1em;
+}
