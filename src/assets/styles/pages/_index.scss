@@ -23,7 +23,7 @@
   }
 
   &__subtitulo {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 3vw, 2rem);
     font-weight: bold;
     color: v.$color-text;
     text-transform: uppercase;
@@ -40,13 +40,13 @@
     text-align: center;
 
     &-dia {
-      font-size: 3.5rem;   
+      font-size: clamp(2rem, 6vw, 4rem);   
       font-weight: 700;
       line-height: 1;      
     }
 
     &-mes {
-      font-size: 2rem;     
+      font-size: clamp(1rem, 4vw, 2.5rem);     
       font-weight: 600;
       margin-top: 0.25rem; 
     }
@@ -60,21 +60,21 @@
     text-align: center;
 
     &-lugar {
-      font-size: 2rem;
+      font-size: clamp(1rem, 3vw, 2rem);
       font-weight: 700;
       line-height: 1.2;
     }
 
     &-ciudad {
       text-transform: uppercase;
-      font-size: 3rem;
+      font-size: clamp(1.5rem, 5vw, 3rem);
       font-weight: 600;
       margin-top: 0.25rem; 
     }
   }
 
   &__entrada {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 3vw, 1.5rem);
     font-weight: 600;
     color: v.$color-text;   
     text-align: center;
@@ -82,7 +82,7 @@
   }
 
   &__participantes-btn {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 3vw, 1.5rem);
     background-color: v.$color-marron;
     color: v.$color-main;
     font-weight: bold;

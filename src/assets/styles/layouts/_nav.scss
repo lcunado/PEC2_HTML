@@ -1,0 +1,44 @@
+@use "../abstracts/variables" as v;
+
+/* ================================
+   Menú de navegación global
+   ================================ */
+.footer__nav-group {
+  display: flex;
+  justify-content: center;
+  gap: 2rem; 
+}
+
+.nav__list,
+.footer__extra {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;           
+  justify-content: center; 
+  gap: 2rem;    
+  
+  /* Ocultar en móviles */
+    @media (max-width: v.$breakpoint-md) {
+      display: none;
+    }
+}
+
+.nav__link,
+.footer__link {
+  text-decoration: none;   
+  color: v.$color-text; 
+  text-transform: uppercase; 
+  font-size: 0.875rem;
+  font-weight: 600;        
+  transition: color 0.3s;
+
+  &:hover {
+    color: v.$color-marron; 
+  }
+}
+
+
+
+
+

@@ -1,14 +1,25 @@
 <footer class="footer">
-  <p class="footer__text">
-    Laura Cuñado García<br />
-    <a
-      href="https://www.uoc.edu"
-      class="footer__link"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Universitat Oberta de Catalunya (se abre en nueva pestaña)"
-    >
-      &copy; Universitat Oberta de Catalunya
+  <include src="./views/logo.html"></include>
+
+  <div class="footer__nav-group">
+    <ul class="footer__extra">
+      <li class="footer__item">
+        <a href="#index" class="footer__link">Inicio</a>
+      </li>
+    </ul>
+    <include src="./views/nav.html"></include>
+  </div>
+
+  <div class="footer__social">
+    <a href="https://www.google.com" target="_blank" rel="noopener" aria-label="Google">
+      <img src="./assets/images/google.svg" alt="Logo Google" class="footer__social-icon">
     </a>
-  </p>
+    <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+      <img src="./assets/images/facebook.svg" alt="Logo Facebook" class="footer__social-icon">
+    </a>
+    <a href="https://www.twitter.com" target="_blank" rel="noopener" aria-label="Twitter">
+      <img src="./assets/images/twitter.svg" alt="Logo Twitter" class="footer__social-icon">
+    </a>
+  </div>
+  
 </footer>

@@ -1,23 +1,36 @@
 @use "../abstracts/variables" as v;
 
+/* ================================
+   Footer global
+   ================================ */
 .footer {
   background-color: v.$color-granate;
-  padding: 1rem;
+  padding: 1rem 2rem;
   color: v.$color-main;
   font-size: 0.75rem;
   text-align: center;
+  position: relative;
+  z-index: v.$z-header;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  &__text {
-    font-family: v.$font-body;
-    line-height: 1.4;
-  }
+.footer__social {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap:0.5rem;
+}
 
-  &__link {
-    color: v.$color-marron;
-    text-decoration: none;
-
-    &:hover {
-      color: v.$color-marron-dark;
-    }
+.footer__social-icon {
+  width: 32px;       
+  height: 32px;      
+  object-fit: contain; 
+  &:hover {
+    opacity: 0.7; 
   }
 }
+
+
+

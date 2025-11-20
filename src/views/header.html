@@ -1,22 +1,7 @@
 <header class="header">
-  <a href="index.html" class="header__logo">Jornadas</a>
+  <include src="./views/logo.html"></include>
 
-  <nav class="header__nav" aria-label="Menú principal">
-    <ul class="header__list">
-      <li class="header__item">
-        <a href="#index" class="header__link">Inicio</a>
-      </li>
-      <li class="header__item">
-        <a href="#participantes" class="header__link">Participantes</a>
-      </li>
-      <li class="header__item">
-        <a href="#articulo" class="header__link">Artículo</a>
-      </li>
-      <li class="header__item">
-        <a href="#contacto" class="header__link">Contacto</a>
-      </li>
-    </ul>
-  </nav>
+  <include src="./views/nav.html"></include>
 
   <!-- Tres línas para el menú móvil -->
   <button class="header__toggle" aria-label="Abrir menú">
@@ -27,7 +12,6 @@
 
   <!-- Menú móvil -->
   <nav class="header__menu" id="mobileMenu">
-    <a href="#home.html" class="header__link">Inicio</a>
     <a href="#participantes.html" class="header__link">Participantes</a>
     <a href="#articulo.html" class="header__link">Artículo</a>
     <a href="#contacto.html" class="header__link">Contacto</a>

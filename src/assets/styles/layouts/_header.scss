@@ -10,48 +10,9 @@
   padding: 1rem 2rem;
   position: relative;
   z-index: v.$z-header;
-
-  /* Contenedor flex para logo + nav */
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  &__logo {
-    font-family: v.$font-header;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: v.$color-granate;
-    text-decoration: none;
-  }
-
-  &__nav {
-    display: flex;
-    align-items: center;
-
-    /* Ocultar en móviles */
-    @media (max-width: v.$breakpoint-md) {
-      display: none;
-    }
-  }
-
-  &__list {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 2rem;
-  }
-
-  &__link {
-    color: v.$color-granate;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-
-    &:hover {
-      color: v.$color-granate-dark;
-    }
-  }
 
   /* Botón hamburguesa */
   &__toggle {

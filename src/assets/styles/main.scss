@@ -14,6 +14,7 @@
  * Import components
  */
 @use "components/animaciones";
+@use "components/logo";
 
 /**
  * Import layouts
@@ -22,11 +23,12 @@
 @use "layouts/footer";
 @use "layouts/grid";
 @use "layouts/header";
+@use "layouts/nav";
 
 /**
  * Import pages
  */
-@use "pages/home";
+@use "pages/index";
 
 /**
  * Do NOT include anything else in this file!
