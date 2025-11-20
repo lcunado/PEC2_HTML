@@ -1,0 +1,97 @@
+@use "../abstracts/variables" as v;
+
+/* ================================
+   Header global
+   ================================ */
+
+.header {
+  background-color: v.$color-main;
+  color: v.$color-granate;
+  padding: 1rem 2rem;
+  position: relative;
+  z-index: v.$z-header;
+
+  /* Contenedor flex para logo + nav */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__logo {
+    font-family: v.$font-header;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: v.$color-granate;
+    text-decoration: none;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+
+    /* Ocultar en móviles */
+    @media (max-width: v.$breakpoint-md) {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+  }
+
+  &__link {
+    color: v.$color-granate;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: v.$color-granate-dark;
+    }
+  }
+
+  /* Botón hamburguesa */
+  &__toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    @media (max-width: v.$breakpoint-md) {
+      display: block;
+    }
+
+    span {
+      display: block;
+      width: 24px;
+      height: 3px;
+      margin: 5px 0;
+      background-color: v.$color-text;
+      transition: all 0.3s ease;
+    }
+  }
+
+  /* Menú móvil desplegable */
+  &__menu {
+    display: none;
+    flex-direction: column;
+    background-color: v.$color-main;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+
+    &--open {
+      display: flex;
+    }
+
+    .header__link {
+      padding: 0.5rem 0;
+      font-size: 1.2rem;
+    }
+  }
+}

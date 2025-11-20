@@ -1,0 +1,23 @@
+@use "../abstracts/variables" as v;
+
+.footer {
+  background-color: v.$color-granate;
+  padding: 1rem;
+  color: v.$color-main;
+  font-size: 0.75rem;
+  text-align: center;
+
+  &__text {
+    font-family: v.$font-body;
+    line-height: 1.4;
+  }
+
+  &__link {
+    color: v.$color-marron;
+    text-decoration: none;
+
+    &:hover {
+      color: v.$color-marron-dark;
+    }
+  }
+}

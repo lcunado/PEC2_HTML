@@ -4,32 +4,29 @@
  */
 
  /**
- * Import dependencies
+ * Import abstracts
  */
-@use "dependencies";
+@use "abstracts/dependencies";
+@use "abstracts/variables";
+@use "abstracts/functions";
 
 /**
- * Import functions
+ * Import components
  */
-@use "functions";
+@use "components/animaciones";
 
 /**
  * Import layouts
- * It's a best practice to use a different partial for each page
+ * 
  */
-// @use "layouts/seccion";
+@use "layouts/footer";
+@use "layouts/grid";
+@use "layouts/header";
 
 /**
  * Import pages
  */
 @use "pages/home";
-
-/**
- * Import components
- */
-@use "components/footer";
-@use "components/header";
-@use "components/animaciones";
 
 /**
  * Do NOT include anything else in this file!

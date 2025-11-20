@@ -1,4 +1,5 @@
-@use "../variables";
+@use "../abstracts/variables";
+
 @keyframes entrada-izquierda {
   from {
     opacity: 0;

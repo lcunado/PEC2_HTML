@@ -1,0 +1,103 @@
+
+/* ================================
+   Layout Grid principal
+   ================================ */
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr 1fr 2fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  gap: 1rem;
+  padding: 1rem;
+  position: relative;
+}
+
+.grid__imagen { 
+  grid-column: 1 / 4; 
+  grid-row: 1 / 4; 
+  z-index: 1;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
+
+.grid__titulo { 
+  grid-column: 3 / 6; 
+  grid-row: 1; 
+  z-index: 2;
+  align-self: start;
+  padding: 1rem;
+}
+
+.grid__subtitulo { 
+  grid-column: 6; 
+  grid-row: 1 / 6; 
+  writing-mode: vertical-rl;
+}
+
+.grid__fecha { 
+  grid-column: 4 / 6; 
+  grid-row: 2; 
+  align-self: center;
+  justify-self: center;
+}
+
+.grid__ubicacion { 
+  grid-column: 4 / 6; 
+  grid-row: 3;
+  align-self: center;
+  justify-self: center;
+}
+
+.grid__entrada { 
+  grid-column: 4 / 6; 
+  grid-row: 4; 
+  justify-self: center;
+}
+
+.grid__participantes { 
+  grid-column: 3; 
+  grid-row: 4; 
+  justify-self:end;
+}
+
+/* ================================
+   Responsive
+   ================================ */
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .grid__imagen,
+  .grid__titulo,
+  .grid__subtitulo,
+  .grid__fecha,
+  .grid__ubicacion,
+  .grid__participantes {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .grid__subtitulo {
+    writing-mode: horizontal-tb;
+    text-align: left;
+  }
+}
+
+/* ================================
+   Fallback para navegadores sin Grid
+   ================================ */
+@supports not (display: grid) {
+  .grid {
+    display: block;
+  }
+
+  .grid > * {
+    margin-bottom: 1rem;
+  }
+}
