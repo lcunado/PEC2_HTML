@@ -8,7 +8,48 @@
    Página de participantes
    ================================ */
 
+.grid--participantes {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
 
+  @media (max-width: v.$breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
+  @media (max-width: v.$breakpoint-sm) {
+    grid-template-columns: 1fr;
+  }
 
+  justify-items: center;  
+}
 
+.participante {
+  background-color: v.$color-main;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  max-width: 300px;      
+
+  &__img {
+    width: 100%;
+    max-width: 250px;
+    height: 200px;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    object-fit: cover;
+  }
+
+  &__name {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 700;
+    color: v.$color-granate;
+    margin: 0.5rem 0;
+  }
+
+  &__desc {
+    font-size: clamp(0.875rem, 1.5vw, 1.25rem);
+    color: v.$color-marron;
+  }
+}
