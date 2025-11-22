@@ -53,3 +53,13 @@
     color: v.$color-marron;
   }
 }
+
+.participantes__titulo {
+  grid-column: 1 / -1;              
+  text-align: center;
+  font-family: v.$font-header;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: v.$color-granate;
+  margin-bottom: v.$space-3;
+}
