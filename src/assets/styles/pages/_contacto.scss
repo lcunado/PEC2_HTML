@@ -7,7 +7,137 @@
 /* ================================
    Página de contacto
    ================================ */
+.contacto {
+  padding: v.$space-4;
+  background-color: v.$color-main;
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-4;
 
+  &__titulo {
+    text-align: center;
+    font-family: v.$font-header;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: v.$color-granate;
+    margin-bottom: v.$space-3;
+  }
 
+  /* Bloque de información */
+  &__info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: v.$space-3;
+    text-align: center;
+    font-size: v.$font-size-lg;
+    color: v.$color-text;
+    line-height: 1.6;
 
+    &-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: v.$space-1;
+      font-size: v.$font-size-base;
+      color: v.$color-text;
+
+      i {
+        font-size: 2rem;
+        color: v.$color-granate;
+      }
+
+      a,
+      span {
+        font-size: v.$font-size-lg;
+        color: v.$color-text;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: v.$color-marron;
+      }
+    }
+  }
+
+  /* Bloque de formulario */
+  &__formulario {
+    width: 100%;
+    margin: 0 auto;
+
+    &-titulo {
+      text-align: center;
+      font-size: v.$font-size-lg;
+      font-weight: 700;
+      margin-bottom: v.$space-2;
+      color: v.$color-granate;
+    }
+
+    &-campo {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: v.$space-2;
+
+      label {
+        margin-bottom: v.$space-1;
+        font-weight: 600;
+        color: v.$color-text;
+      }
+
+      input,
+      textarea {
+        padding: v.$space-2;
+        border: 1px solid v.$color-granate;
+        border-radius: v.$border-radius-sm;
+        font-size: v.$font-size-base;
+        font-family: v.$font-body;
+      }
+    }
+
+    &-btn {
+      display: block;
+      margin: 0 auto;
+      background-color: v.$color-marron;
+      color: v.$color-main;
+      font-size: v.$font-size-lg;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 0.75rem 1.5rem;
+      border-radius: v.$border-radius-md;
+      transition: background-color 0.3s ease;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        background-color: v.$color-marron-dark;
+      }
+    }
+
+    &-error {
+      color: v.$color-granate;
+      font-size: v.$font-size-sm;
+      margin-top: 0.25rem;
+      display: block;
+    }
+
+    &-confirmacion {
+      margin-top: v.$space-3;
+      text-align: center;
+      font-size: v.$font-size-lg;
+      font-weight: 600;
+      color: v.$color-granate;
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: v.$breakpoint-md) {
+  .contacto__info {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: v.$breakpoint-md) {
+  .contacto__formulario {
+    max-width: 800px;
+  }
+}
 
