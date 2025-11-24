@@ -1,55 +1,73 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Tu hoja de estilos compilada -->
     <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss"><!-- do not remove this line! -->
     <title>Participantes - Jornada de Cocina Cántabra</title>
   </head>
   <body>
     <include src="./views/header.html"></include>
     
-    <main class="grid grid--participantes">
-      <h1 class="participantes__titulo">Participantes</h1>
+    <main class="container my-5">
+      <h1 class="text-center mb-4 participantes__titulo">Participantes</h1>
 
-      <div class="participante">
-        <img src="./assets/images/chef1.webp" alt="Chef Martín Gutiérrez" class="participante__img">
-        <p class="participante__name"><strong>Martín Gutiérrez</strong></p>
-        <p class="participante__desc">Chef cántabro con estrella michelín.</p>
+      <div class="row g-4 justify-content-center">
+        <!-- Participante 1 -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="participante">
+            <img src="./assets/images/chef1.webp" alt="Chef Martín Gutiérrez" class="participante__img img-fluid">
+            <p class="participante__name"><strong>Martín Gutiérrez</strong></p>
+            <p class="participante__desc">Chef cántabro con estrella michelín.</p>
+          </div>
+        </div>
+
+        <!-- Participante 2 -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="participante">
+            <img src="./assets/images/chef2.webp" alt="Chef Diego Fernández" class="participante__img img-fluid">
+            <p class="participante__name"><strong>Diego Fernández</strong></p>
+            <p class="participante__desc">Apasionado de la cocina tradicional cántabra.</p>
+          </div>
+        </div>
+
+        <!-- Participante 3 -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="participante">
+            <img src="./assets/images/chef3.webp" alt="Chef Laura Ceballos" class="participante__img img-fluid">
+            <p class="participante__name"><strong>Laura Ceballos</strong></p>
+            <p class="participante__desc">Especialista en cocina tradicional cántabra.</p>
+          </div>
+        </div>
+
+        <!-- Participante 4 -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="participante">
+            <img src="./assets/images/chef4.webp" alt="Chef Sofía López" class="participante__img img-fluid">
+            <p class="participante__name"><strong>Sofía López</strong></p>
+            <p class="participante__desc">Especialista en postres artesanales.</p>
+          </div>
+        </div>
+
+        <!-- Participante 5 -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="participante">
+            <img src="./assets/images/chef5.webp" alt="Chef Carmen Ruiz" class="participante__img img-fluid">
+            <p class="participante__name"><strong>Carmen Ruiz</strong></p>
+            <p class="participante__desc">Premiada al mejor cocido cántabro.</p>
+          </div>
+        </div>
+
+        <!-- Participante 6 -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="participante">
+            <img src="./assets/images/chef6.webp" alt="Chef Álvaro Santamaría" class="participante__img img-fluid">
+            <p class="participante__name"><strong>Álvaro Santamaría</strong></p>
+            <p class="participante__desc">Chef innovador con raíces cántabras.</p>
+          </div>
+        </div>
       </div>
-
-      <div class="participante">
-        <img src="./assets/images/chef2.webp" alt="Chef Diego Fernández" class="participante__img">
-        <p class="participante__name"><strong>Diego Fernández</strong></p>
-        <p class="participante__desc">Apasionado de la cocina tradicional cántabra.</p>
-      </div>
-
-      <div class="participante">
-        <img src="./assets/images/chef3.webp" alt="Chef Laura Ceballos" class="participante__img">
-        <p class="participante__name"><strong>Laura Ceballos</strong></p>
-        <p class="participante__desc">Especialista en cocina tradicional cántabra.</p>
-      </div>
-
-      <div class="participante">
-        <img src="./assets/images/chef4.webp" alt="Chef Sofía López" class="participante__img">
-        <p class="participante__name"><strong>Sofía López</strong></p>
-        <p class="participante__desc">Especialista en postres artesanales.</p>
-      </div>
-
-      <div class="participante">
-        <img src="./assets/images/chef5.webp" alt="Chef Carmen Ruiz" class="participante__img">
-        <p class="participante__name"><strong>Carmen Ruiz</strong></p>
-        <p class="participante__desc">Premiada al mejor cocido cántabro.</p>
-      </div>
-
-      <div class="participante">
-        <img src="./assets/images/chef6.webp" alt="Chef Álvaro Santamaría" class="participante__img">
-        <p class="participante__name"><strong>Álvaro Santamaría</strong></p>
-        <p class="participante__desc">Chef innovador con raíces cántabras.</p>
-      </div>
-
-      
     </main>
 
     <include src="./views/footer.html"></include>

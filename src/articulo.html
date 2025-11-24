@@ -1,96 +1,104 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss"><!-- do not remove this line! -->
     <title>Artículo - Jornada de Cocina Cántabra</title>
   </head>
   <body>
     <include src="./views/header.html"></include>
 
-    <section class="articulo__hero">
-      <img src="./assets/images/cocido.webp" alt="Imagen del artículo" class="articulo__hero-img">
-      <div class="articulo__hero-overlay">
+    <!-- Hero -->
+    <section class="articulo__hero position-relative">
+      <img src="./assets/images/cocido.webp" alt="Imagen del artículo" class="articulo__hero-img img-fluid w-100">
+      <div class="articulo__hero-overlay position-absolute top-50 start-50 translate-middle text-center text-light">
         <h1 class="articulo__titulo">El sabor del Cocido Montañés</h1>
         <p class="articulo__autor">Por Ana González</p>
       </div>
     </section>
 
-    <main class="articulo__contenido">
-      
-      <div class="articulo__columna">
-        <p class="articulo__texto articulo__texto--grande">
-          El cocido montañés es uno de los platos más emblemáticos de Cantabria, con raíces profundas en la tradición rural.
-        </p>
+    <!-- Contenido -->
+    <main class="container my-5 articulo__contenido p-4 rounded">
+      <div class="row g-4">
+        <!-- Columna 1 -->
+        <div class="col-12 col-md-6">
+          <p class="articulo__texto articulo__texto--grande">
+            El cocido montañés es uno de los platos más emblemáticos de Cantabria, con raíces profundas en la tradición rural.
+          </p>
+        </div>
+
+        <!-- Columna 2 -->
+        <div class="col-12 col-md-6">
+          <p class="articulo__texto">
+            Elaborado con alubias blancas y berza, acompañado de carnes como costilla, panceta y chorizo, es un plato contundente que refleja la identidad gastronómica de la región.
+          </p>
+          <p class="articulo__texto">
+            Su preparación requiere tiempo y paciencia, pero el resultado es un sabor inconfundible que ha pasado de generación en generación.
+          </p>
+          <p class="articulo__texto articulo__texto--pequeño">
+            Hoy en día, el cocido montañés se sirve tanto en hogares como en restaurantes, siendo un símbolo de hospitalidad y tradición.
+          </p>
+        </div>
+
+        <!-- Columna 3 -->
+        <div class="col-12 col-md-6">
+          <p class="articulo__texto">
+            La receta tradicional se transmite oralmente, con cada familia aportando su toque personal. Algunas prefieren añadir morcilla, otras potencian el sabor con un sofrito previo.
+          </p>
+          <p class="articulo__texto">
+            El secreto está en la cocción lenta, que permite que las alubias absorban los aromas de las carnes y la berza, creando un caldo espeso y lleno de matices.
+          </p>
+        </div>
+
+        <!-- Columna 4 -->
+        <div class="col-12 col-md-6">
+          <p class="articulo__texto">
+            Más allá de la gastronomía, el cocido montañés representa un momento de encuentro. Reunir a la familia alrededor de la mesa para compartir este plato es una tradición que refuerza los lazos comunitarios.
+          </p>
+          <p class="articulo__texto articulo__texto--pequeño">
+            En festivales y jornadas gastronómicas, como esta, el cocido se convierte en protagonista, mostrando al mundo la riqueza cultural y culinaria de Cantabria.
+          </p>
+        </div>
       </div>
 
-      <div class="articulo__columna">
-        <p class="articulo__texto">
-          Elaborado con alubias blancas y berza, acompañado de carnes como costilla, panceta y chorizo, es un plato contundente que refleja la identidad gastronómica de la región.
-        </p>
-        <p class="articulo__texto">
-          Su preparación requiere tiempo y paciencia, pero el resultado es un sabor inconfundible que ha pasado de generación en generación.
-        </p>
-        <p class="articulo__texto articulo__texto--pequeño">
-          Hoy en día, el cocido montañés se sirve tanto en hogares como en restaurantes, siendo un símbolo de hospitalidad y tradición.
-        </p>
-      </div>
-
-      <div class="articulo__columna">
-        <p class="articulo__texto">
-          La receta tradicional se transmite oralmente, con cada familia aportando su toque personal. Algunas prefieren añadir morcilla, otras potencian el sabor con un sofrito previo.
-        </p>
-        <p class="articulo__texto">
-          El secreto está en la cocción lenta, que permite que las alubias absorban los aromas de las carnes y la berza, creando un caldo espeso y lleno de matices.
-        </p>
-      </div>
-
-      <div class="articulo__columna">
-        <p class="articulo__texto">
-          Más allá de la gastronomía, el cocido montañés representa un momento de encuentro. Reunir a la familia alrededor de la mesa para compartir este plato es una tradición que refuerza los lazos comunitarios.
-        </p>
-        <p class="articulo__texto articulo__texto--pequeño">
-          En festivales y jornadas gastronómicas, como esta, el cocido se convierte en protagonista, mostrando al mundo la riqueza cultural y culinaria de Cantabria.
-        </p>
-      </div>
-
-      <div class="articulo__items">
-        <h2 class="articulo__items-titulo">Tres claves del cocido</h2>
-        <ul class="articulo__items-lista">
-          <li class="articulo__item">
+      <!-- Items -->
+      <div class="articulo__items text-center border-top pt-4 mt-4">
+        <h2 class="articulo__items-titulo mb-3">Tres claves del cocido</h2>
+        <ul class="list-unstyled d-flex flex-column gap-3 articulo__items-lista">
+          <li class="articulo__item d-flex gap-2">
             <span class="articulo__item-numero">1</span>
             Alubias de calidad y bien cocidas
           </li>
-          <li class="articulo__item">
+          <li class="articulo__item d-flex gap-2">
             <span class="articulo__item-numero">2</span>
             Berza fresca y tierna
           </li>
-          <li class="articulo__item">
+          <li class="articulo__item d-flex gap-2">
             <span class="articulo__item-numero">3</span>
             Carnes curadas con sabor auténtico
           </li>
         </ul>
       </div>
 
-      <section class="articulo__receta">
-        <h2 class="articulo__receta-titulo">Pasos de la receta</h2>
-        <ol class="articulo__receta-lista">
-          <li class="articulo__paso">
-            <img src="./assets/images/paso1.webp" alt="Remojar alubias" class="articulo__paso-img">
+      <!-- Receta -->
+      <section class="articulo__receta border-top pt-4 mt-4">
+        <h2 class="articulo__receta-titulo text-center mb-4">Pasos de la receta</h2>
+        <ol class="list-unstyled d-flex flex-column gap-4 articulo__receta-lista">
+          <li class="articulo__paso text-center">
+            <img src="./assets/images/paso1.webp" alt="Remojar alubias" class="articulo__paso-img img-fluid mb-3">
             <p>Remojar las alubias la noche anterior en abundante agua fría. Esto asegura que se ablanden y se cuezan de manera uniforme.</p>
           </li>
-          <li class="articulo__paso">
-            <img src="./assets/images/paso2.webp" alt="Cocer alubias y berza" class="articulo__paso-img">
+          <li class="articulo__paso text-center">
+            <img src="./assets/images/paso2.webp" alt="Cocer alubias y berza" class="articulo__paso-img img-fluid mb-3">
             <p>Cocer las alubias junto con la berza en una cazuela grande, a fuego lento, durante 90 minutos para que los sabores se integren desde el inicio.</p>
           </li>
-          <li class="articulo__paso">
-            <img src="./assets/images/paso3.webp" alt="Añadir carnes" class="articulo__paso-img">
+          <li class="articulo__paso text-center">
+            <img src="./assets/images/paso3.webp" alt="Añadir carnes" class="articulo__paso-img img-fluid mb-3">
             <p>Añadir las carnes (costilla, panceta, chorizo) y dejar cocinar lentamente durante media hora, removiendo de vez en cuando.</p>
           </li>
-          <li class="articulo__paso">
-            <img src="./assets/images/cocido.webp" alt="Servir cocido" class="articulo__paso-img">
+          <li class="articulo__paso text-center">
+            <img src="./assets/images/cocido.webp" alt="Servir cocido" class="articulo__paso-img img-fluid mb-3">
             <p>Rectificar de sal y servir bien caliente. El resultado es un plato contundente y lleno de sabor.</p>
           </li>
         </ol>

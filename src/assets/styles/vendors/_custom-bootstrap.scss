@@ -1,0 +1,31 @@
+@use "../abstracts/variables" as v;
+
+/* Mapear tus tokens a las variables de Bootstrap */
+$primary: v.$color-marron;
+$secondary: v.$color-granate;
+$success: v.$color-main;
+$danger: v.$color-granate;
+$warning: v.$color-marron-dark;
+$info: v.$color-text;
+$light: #f8f9fa;
+$dark: #212529;
+
+/* Tipografía */
+$font-family-sans-serif: v.$font-body;
+$headings-font-family: v.$font-header;
+
+/* Bordes y radios */
+$border-radius: v.$border-radius-sm;
+$border-radius-lg: v.$border-radius-md;
+
+/* Formularios */
+$input-border-color: v.$color-granate;
+$input-focus-border-color: v.$color-marron;
+$input-focus-box-shadow: 0 0 0 0.25rem rgba(203, 164, 64, 0.25);
+
+/* Botones */
+$btn-border-radius: v.$border-radius-md;
+$btn-font-weight: 600;
+
+/* Importar Bootstrap con overrides ya aplicados */
+@import "~bootstrap/scss/bootstrap";

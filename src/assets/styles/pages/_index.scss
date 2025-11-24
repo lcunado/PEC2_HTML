@@ -90,14 +90,14 @@
   text-align: center;
 
   &-lugar {
-    font-size: clamp(1rem, 3vw, 2rem);
+    font-size: clamp(1rem, 2vw, 2rem);
     font-weight: 700;
     line-height: 1.2;
   }
 
   &-ciudad {
     text-transform: uppercase;
-    font-size: clamp(1.5rem, 5vw, 3rem);
+    font-size: clamp(1.5rem, 4vw, 3rem);
     font-weight: 600;
     margin-top: 0.25rem; 
   }
@@ -161,7 +161,6 @@
     text-align: center;
   }
 }
-
 
 
 

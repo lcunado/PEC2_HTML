@@ -2,45 +2,49 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contactoForm");
 
   form.addEventListener("submit", function (event) {
+    event.preventDefault();
     let valido = true;
 
-    // Limpia errores previos
+    // limpiar errores previos
     document.getElementById("error-nombre").textContent = "";
     document.getElementById("error-email").textContent = "";
     document.getElementById("error-mensaje").textContent = "";
 
-    const nombre = document.getElementById("nombre").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const mensaje = document.getElementById("mensaje").value.trim();
+    const nombre = document.getElementById("nombre");
+    const email = document.getElementById("email");
+    const mensaje = document.getElementById("mensaje");
 
-    // Valida nombre
-    if (nombre.length < 3) {
+    if (nombre.value.trim().length < 3) {
+      nombre.classList.add("is-invalid");
       document.getElementById("error-nombre").textContent =
         "El nombre debe tener al menos 3 caracteres.";
       valido = false;
+    } else {
+      nombre.classList.remove("is-invalid");
     }
 
-    // Valida email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
+    if (!emailRegex.test(email.value.trim())) {
+      email.classList.add("is-invalid");
       document.getElementById("error-email").textContent =
         "Introduce un correo electrónico válido.";
       valido = false;
+    } else {
+      email.classList.remove("is-invalid");
     }
 
-    // Valida mensaje
-    if (mensaje.length < 10) {
+    if (mensaje.value.trim().length < 10) {
+      mensaje.classList.add("is-invalid");
       document.getElementById("error-mensaje").textContent =
         "El mensaje debe tener al menos 10 caracteres.";
       valido = false;
+    } else {
+      mensaje.classList.remove("is-invalid");
     }
 
-    if (!valido) {
-      event.preventDefault(); 
-    } else {
-      event.preventDefault(); 
-      document.getElementById("mensaje-confirmacion").style.display = "block"; // Muestra el mensaje
-      form.reset(); // Limpia el formulario
+    if (valido) {
+      form.reset();
+      document.getElementById("mensaje-confirmacion").classList.remove("d-none");
     }
   });
 });

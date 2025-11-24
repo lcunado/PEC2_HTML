@@ -5,8 +5,10 @@
 }
 
 /* ================================
-   Página de articulo
+   Página de artículo
    ================================ */
+
+/* Hero */
 .articulo__hero {
   position: relative;
 
@@ -18,9 +20,9 @@
 
   &-overlay {
     position: absolute;
-    top: 20%;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     text-align: center;
     color: v.$color-main;
     text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
@@ -32,6 +34,7 @@
   font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 700;
   margin-bottom: v.$space-1;
+  color: v.$color-main;
 }
 
 .articulo__autor {
@@ -39,20 +42,13 @@
   font-style: italic;
 }
 
+/* Contenido principal */
 .articulo__contenido {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: v.$space-3;
-  padding: v.$space-3;
   background-color: v.$color-main;
+  border-radius: v.$border-radius-md;
 }
 
-.articulo__columna {
-  display: flex;
-  flex-direction: column;
-  gap: v.$space-2;
-}
-
+/* Texto */
 .articulo__texto {
   font-family: v.$font-body;
   font-size: v.$font-size-base;
@@ -70,11 +66,9 @@
   }
 }
 
+/* Items */
 .articulo__items {
-  grid-column: 1 / -1;
-  text-align: center;
   border-top: 2px solid v.$color-marron;
-  padding-top: v.$space-3;
 
   &-titulo {
     font-size: v.$font-size-lg;
@@ -86,16 +80,10 @@
   &-lista {
     list-style: none;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: v.$space-2;
   }
 }
 
 .articulo__item {
-  display: flex;
-  align-items: center;
-  gap: v.$space-2;
   font-size: v.$font-size-base;
   font-weight: 500;
   color: v.$color-text;
@@ -113,40 +101,32 @@
   }
 }
 
+/* Receta */
 .articulo__receta {
   border-top: 2px solid v.$color-marron;
-  grid-column: 1 / -1;
-  padding-top: v.$space-3;
 
   &-titulo {
     font-size: v.$font-size-lg;
     font-weight: 700;
     color: v.$color-granate;
     margin-bottom: v.$space-2;
-    text-align: center;
   }
 
   &-lista {
     list-style: none; 
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: v.$space-3;
   }
 }
 
 .articulo__paso {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
-  gap: v.$space-2;
 
   &-img {
     max-width: 50%;
     height: auto;
     border-radius: v.$border-radius-md;
     box-shadow: v.$shadow-sm;
+    margin-bottom: v.$space-2;
   }
 
   p {
@@ -154,6 +134,7 @@
     line-height: 1.6;
     color: v.$color-text;
     max-width: 600px;
+    margin: 0 auto;
   }
 }
 

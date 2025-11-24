@@ -11,10 +11,14 @@
 @use "abstracts/functions";
 
 /**
- * Import components
+ * Import vendors
  */
-@use "components/animaciones";
-@use "components/logo";
+@use "vendors/custom-bootstrap";
+
+/**
+ * Import base
+ */
+@use "base/reset";
 
 /**
  * Import layouts
@@ -26,17 +30,18 @@
 @use "layouts/nav";
 
 /**
+ * Import components
+ */
+@use "components/animaciones";
+@use "components/logo";
+
+/**
  * Import pages
  */
 @use "pages/index";
 @use "pages/articulo";
 @use "pages/contacto";
 @use "pages/participantes";
-
-/**
- * Import base
- */
-@use "base/reset";
 
 /**
  * Do NOT include anything else in this file!
