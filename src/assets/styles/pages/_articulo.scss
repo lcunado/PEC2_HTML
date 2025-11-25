@@ -1,228 +1,259 @@
 @use "../abstracts/variables" as v;
 
-* {
-  box-sizing: border-box;
-}
-
 /* ================================
    Página de artículo
    ================================ */
 
-/* Hero */
-.articulo__hero {
-  position: relative;
+/* Declaramos el orden de las capas */
+@layer base, components, overrides;
 
-  &-img {
-    width: 100%;
-    height: 60vh;
-    object-fit: cover;
+/* -------------------------------
+   Capa base: estructura general
+   ------------------------------- */
+@layer base {
+  * {
+    box-sizing: border-box;
   }
 
-  &-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: v.$color-main;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-  }
-}
+  /* Hero */
+  .articulo__hero {
+    position: relative;
 
-.articulo__titulo {
-  font-family: v.$font-header;
-  font-size: clamp(2rem, 5vw, 4rem);
-  font-weight: 700;
-  margin-bottom: v.$space-1;
-  color: v.$color-main;
-}
+    &-img {
+      width: 100%;
+      height: 60vh;
+      object-fit: cover;
+    }
 
-.articulo__autor {
-  font-size: clamp(1rem, 2vw, 1.5rem);
-  font-style: italic;
-}
-
-/* Contenido principal como contenedor */
-.articulo__contenido {
-  background-color: v.$color-main;
-  border-radius: v.$border-radius-md;
-  container-type: inline-size;
-  container-name: articulo;
-}
-
-/* Texto */
-.articulo__texto {
-  font-family: v.$font-body;
-  font-size: v.$font-size-base;
-  line-height: 1.6;
-  color: v.$color-text;
-
-  &--grande {
-    font-size: v.$font-size-xl;
-    font-weight: 600;
-  }
-
-  &--pequeño {
-    font-size: v.$font-size-sm;
-    color: v.$color-granate;
-  }
-}
-
-/* Blockquote */
-.articulo__cita {
-  font-style: italic;
-  border-left: 4px solid v.$color-granate;
-  padding-left: 1rem;
-  margin: v.$space-3 0;
-  color: v.$color-marron;
-
-  cite {
-    display: block;
-    margin-top: 0.5rem;
-    font-size: v.$font-size-sm;
-    color: v.$color-text;
-  }
-}
-
-/* Items */
-.articulo__items {
-  border-top: 2px solid v.$color-marron;
-
-  &-titulo {
-    font-size: v.$font-size-lg;
-    font-weight: 700;
-    margin-bottom: v.$space-2;
-    color: v.$color-granate;
-  }
-
-  &-lista {
-    list-style: none;
-    padding: 0;
-  }
-}
-
-.articulo__item {
-  font-size: v.$font-size-base;
-  font-weight: 500;
-  color: v.$color-text;
-
-  &-numero {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    background-color: v.$color-granate;
-    color: v.$color-main;
-    font-weight: 700;
-  }
-}
-
-/* Receta */
-.articulo__receta {
-  border-top: 2px solid v.$color-marron;
-
-  &-titulo {
-    font-size: v.$font-size-lg;
-    font-weight: 700;
-    color: v.$color-granate;
-    margin-bottom: v.$space-2;
-  }
-
-  &-lista {
-    list-style: none; 
-    padding: 0;
-  }
-}
-
-.articulo__paso {
-  text-align: center;
-
-  &-img {
-    max-width: 50%;
-    height: auto;
-    border-radius: v.$border-radius-md;
-    box-shadow: v.$shadow-sm;
-    margin-bottom: v.$space-2;
-  }
-
-  p {
-    font-size: v.$font-size-base;
-    line-height: 1.6;
-    color: v.$color-text;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-}
-
-/* Pseudoclases */
-.articulo__items-lista:has(.articulo__item-numero) {
-  background-color: v.$color-main;
-  padding: v.$space-2;
-  border-radius: v.$border-radius-sm;
-}
-
-.articulo__texto:is(.articulo__texto--grande, .articulo__texto--pequeño) {
-  font-style: italic;
-}
-
-.articulo__galeria img:where(:first-child) {
-  border: 3px solid v.$color-granate;
-}
-
-/* ================================
-   Container queries
-   ================================ */
-
-/* Contenedor estrecho (<700px): una columna */
-@container articulo (max-width: 700px) {
-  .row {
-    display: flex;
-    flex-direction: column;
-    gap: v.$space-3;
-  }
-
-  .col-12.col-md-6 {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .articulo__paso-img {
-    max-width: 100%;
+    &-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: v.$color-main;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    }
   }
 
   .articulo__titulo {
-    font-size: clamp(1.75rem, 7vw, 2.75rem); 
+    font-family: v.$font-header;
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 700;
+    margin-bottom: v.$space-1;
+    color: v.$color-main;
+    text-align: center;
   }
 
+  .articulo__autor {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-style: italic;
+    text-align: center;
+  }
+
+  /* Contenido principal como contenedor */
+  .articulo__contenido {
+    background-color: v.$color-main;
+    border-radius: v.$border-radius-md;
+    container-type: inline-size;
+    container-name: articulo;
+    padding: v.$space-3;
+  }
+}
+
+/* -------------------------------
+   Capa components: bloques internos
+   ------------------------------- */
+@layer components {
+  /* Texto */
   .articulo__texto {
-    font-size: clamp(1rem, 5vw, 1.25rem); 
+    font-family: v.$font-body;
+    font-size: v.$font-size-base;
+    line-height: 1.6;
+    color: v.$color-text;
+    text-align: center;
+
+    &--grande {
+      font-size: v.$font-size-xl;
+      font-weight: 600;
+    }
+
+    &--pequeño {
+      font-size: v.$font-size-sm;
+      color: v.$color-granate;
+    }
   }
 
-  .articulo__texto--grande {
-    font-size: clamp(1.25rem, 6vw, 1.5rem); 
-    font-weight: 600;
+  /* Blockquote */
+  .articulo__cita {
+    font-style: italic;
+    border-left: 4px solid v.$color-granate;
+    padding-left: 1rem;
+    margin: v.$space-3 0;
+    color: v.$color-marron;
+    text-align: center;
+
+    cite {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: v.$font-size-sm;
+      color: v.$color-text;
+    }
+  }
+
+  /* Items */
+  .articulo__items {
+    border-top: 2px solid v.$color-marron;
+
+    &-titulo {
+      font-size: v.$font-size-lg;
+      font-weight: 700;
+      margin-bottom: v.$space-2;
+      color: v.$color-granate;
+      text-align: center;
+    }
+
+    &-lista {
+      list-style: none;
+      padding: 0;
+    }
+  }
+
+  .articulo__item {
+    font-size: v.$font-size-base;
+    font-weight: 500;
+    color: v.$color-text;
+
+    &-numero {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background-color: v.$color-granate;
+      color: v.$color-main;
+      font-weight: 700;
+    }
+  }
+
+  /* Receta */
+  .articulo__receta {
+    border-top: 2px solid v.$color-marron;
+
+    &-titulo {
+      font-size: v.$font-size-lg;
+      font-weight: 700;
+      color: v.$color-granate;
+      margin-bottom: v.$space-2;
+      text-align: center;
+    }
+
+    &-lista {
+      list-style: none; 
+      padding: 0;
+    }
+  }
+
+  .articulo__paso {
+    text-align: center;
+
+    &-img {
+      max-width: 50%;
+      height: auto;
+      border-radius: v.$border-radius-md;
+      box-shadow: v.$shadow-sm;
+      margin-bottom: v.$space-2;
+    }
+
+    p {
+      font-size: v.$font-size-base;
+      line-height: 1.6;
+      color: v.$color-text;
+      max-width: 600px;
+      margin: 0 auto;
+    }
   }
 }
 
-/* Contenedor medio (>=701px y <1000px): dos columnas */
-@container articulo (min-width: 701px) and (max-width: 1000px) {
-  .row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: v.$space-3;
+/* -------------------------------
+   Capa overrides: pseudoclases y container queries
+   ------------------------------- */
+@layer overrides {
+  /* Pseudoclases */
+  .articulo__items-lista:has(.articulo__item-numero) {
+    background-color: v.$color-main;
+    padding: v.$space-2;
+    border-radius: v.$border-radius-sm;
   }
 
-  .col-12.col-md-6 {
-    width: 100%;
-    max-width: 100%;
+  .articulo__texto:is(.articulo__texto--grande, .articulo__texto--pequeño) {
+    font-style: italic;
   }
 
-  .articulo__paso-img {
-    max-width: 80%;
+  .articulo__galeria img:where(:first-child) {
+    border: 3px solid v.$color-granate;
+  }
+
+  /* ================================
+     Container queries
+     ================================ */
+
+  /* Una columna en pantallas pequeñas (<700px) */
+  @container articulo (max-width: 700px) {
+    .row {
+      display: flex;
+      flex-direction: column;
+      gap: v.$space-3;
+      text-align: center;
+    }
+
+    .col-12 {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .articulo__paso-img {
+      max-width: 100%;
+    }
+
+    .articulo__titulo {
+      font-size: clamp(1.75rem, 7vw, 2.75rem); 
+    }
+
+    .articulo__texto {
+      font-size: clamp(1rem, 5vw, 1.25rem); 
+    }
+
+    .articulo__texto--grande {
+      font-size: clamp(1.25rem, 6vw, 1.5rem); 
+      font-weight: 600;
+    }
+  }
+
+  /* Dos columnas en pantallas grandes (>=768px) */
+  @container articulo (min-width: 768px) {
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: v.$space-4;
+      text-align: center;
+      justify-items: center;
+    }
+
+    .col-12 {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .articulo__paso-img {
+      max-width: 80%;
+      margin: 0 auto;
+      display: block;
+    }
   }
 }
+
 
 
 
