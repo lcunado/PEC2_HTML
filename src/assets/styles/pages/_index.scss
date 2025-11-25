@@ -5,12 +5,18 @@
 }
 
 /* ================================
-   Página de inicio (index)
+   Página de inicio (index) 
    ================================ */
 
 .grid--home {
+  display: grid;                
+  width: 100%;
   grid-template-columns: 2fr 1fr 2fr 1fr 2fr 1fr;
   grid-template-rows: auto auto auto auto;
+
+  /* Contenedor */
+  container-type: inline-size;
+  container-name: home;
 }
 
 .grid__imagen { 
@@ -134,26 +140,42 @@
   }
 }
 
-/* Responsive */
-@media (max-width: v.$breakpoint-md) {
+/* ================================
+   Container queries
+   ================================ */
+
+/* Contenedor estrecho (<600px): todo en una columna */
+@container home (max-width: 600px) {
   .grid--home {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    justify-items: center;   
-    align-items: center;     
-    text-align: center; 
+    justify-items: stretch;
+    align-items: start;
+    text-align: center;
+    padding: 0;
   }
 
+  /* Todos los hijos ocupan ancho completo */
   .grid__imagen,
   .grid__titulo,
   .grid__subtitulo,
   .grid__fecha,
   .grid__ubicacion,
-  .grid__entrada,
-  .grid__participantes {
-    grid-column: 1;
+  .grid__entrada {
+    grid-column: 1 / -1;
     grid-row: auto;
-    justify-self: center;
+    justify-self: stretch;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+  }
+
+  .grid__participantes {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    justify-self: center;   
+    width: auto;            
+    margin: 1rem 0;
   }
 
   .grid__subtitulo {

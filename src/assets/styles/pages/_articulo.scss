@@ -42,10 +42,12 @@
   font-style: italic;
 }
 
-/* Contenido principal */
+/* Contenido principal como contenedor */
 .articulo__contenido {
   background-color: v.$color-main;
   border-radius: v.$border-radius-md;
+  container-type: inline-size;
+  container-name: articulo;
 }
 
 /* Texto */
@@ -167,6 +169,59 @@
 
 .articulo__galeria img:where(:first-child) {
   border: 3px solid v.$color-granate;
+}
+
+/* ================================
+   Container queries
+   ================================ */
+
+/* Contenedor estrecho (<700px): una columna */
+@container articulo (max-width: 700px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-3;
+  }
+
+  .col-12.col-md-6 {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .articulo__paso-img {
+    max-width: 100%;
+  }
+
+  .articulo__titulo {
+    font-size: clamp(1.75rem, 7vw, 2.75rem); 
+  }
+
+  .articulo__texto {
+    font-size: clamp(1rem, 5vw, 1.25rem); 
+  }
+
+  .articulo__texto--grande {
+    font-size: clamp(1.25rem, 6vw, 1.5rem); 
+    font-weight: 600;
+  }
+}
+
+/* Contenedor medio (>=701px y <1000px): dos columnas */
+@container articulo (min-width: 701px) and (max-width: 1000px) {
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: v.$space-3;
+  }
+
+  .col-12.col-md-6 {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .articulo__paso-img {
+    max-width: 80%;
+  }
 }
 
 

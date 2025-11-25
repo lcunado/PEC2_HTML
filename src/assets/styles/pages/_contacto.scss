@@ -14,7 +14,6 @@ h1, h2 {
   font-size: clamp(1.5rem, 3vw, 3rem); 
   color: v.$color-granate;
   font-family: v.$font-header;
-  
 }
 
 /* Iconos de la sección de información */
@@ -55,4 +54,56 @@ h1, h2 {
   font-size: clamp(1rem, 2vw, 1.25rem); 
   text-align: center;
 }
+
+/* ================================
+   Container queries
+   ================================ */
+
+/* Declaramos el contenedor principal */
+main.container {
+  container-type: inline-size;
+  container-name: contacto;
+}
+
+/* Contenedor estrecho (<700px): columnas apiladas */
+@container contacto (max-width: 700px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-3;
+    text-align: center;
+  }
+
+  .row .col {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: v.$space-2;
+  }
+
+  form#contactoForm {
+    max-width: 100%; /* formulario ocupa todo el ancho */
+    padding: 0 v.$space-2;
+  }
+
+}
+
+/* Contenedor medio (<1000px): dos columnas para la info */
+@container contacto (min-width: 701px) and (max-width: 1000px) {
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: v.$space-3;
+    text-align: center;
+  }
+
+  .row .col {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  form#contactoForm {
+    max-width: 80%; /* formulario más estrecho en pantallas medianas */
+  }
+}
+
 
