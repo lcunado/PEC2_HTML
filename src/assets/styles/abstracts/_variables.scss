@@ -12,7 +12,7 @@ $color-marron-dark: #a67845;
 
 /* Tipografía */
 $font-header: 'Georgia', serif;           // Para títulos
-$font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif; // Para texto general
+$font-body: 'Inter', 'Helvetica Neue', arial, sans-serif; // Para texto general
 
 /* Espaciado */
 $space-1: 0.5rem;
@@ -32,9 +32,9 @@ $border-radius-md: 8px;
 $border-radius-lg: 12px;
 
 /* Sombras */
-$shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
-$shadow-md: 0 4px 12px rgba(0,0,0,0.2);
-$shadow-lg: 0 8px 24px rgba(0,0,0,0.3);
+$shadow-sm: 0 2px 4px rgb(0 0 0 / 10%);
+$shadow-md: 0 4px 12px rgb(0 0 0 / 20%);
+$shadow-lg: 0 8px 24px rgb(0 0 0 / 30%);
 
 /* Breakpoints (para responsive) */
 $breakpoint-sm: 576px;

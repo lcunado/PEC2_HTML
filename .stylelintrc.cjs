@@ -23,7 +23,6 @@ module.exports = {
     ],
     'color-function-notation': 'modern',
     'selector-class-pattern': '^[a-z]([a-z0-9-]+)?$',
-    'scss/at-import-no-partial-leading-underscore': true,
     'scss/dollar-variable-pattern': '^[_a-z0-9-]+$',
   }
 }

@@ -16,7 +16,7 @@
   }
 
   /* Hero */
-  .articulo__hero {
+  .articulo-hero {
     position: relative;
 
     &-img {
@@ -29,35 +29,35 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
       color: v.$color-main;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+      text-align: center;
+      transform: translate(-50%, -50%);
+      text-shadow: 2px 2px 6px rgb(0 0 0 / 60%);
     }
   }
 
-  .articulo__titulo {
-    font-family: v.$font-header;
+  .articulo-titulo {
+    color: v.$color-main;
     font-size: clamp(2rem, 5vw, 4rem);
+    text-align: center;
+    font-family: v.$font-header;
     font-weight: 700;
     margin-bottom: v.$space-1;
-    color: v.$color-main;
-    text-align: center;
   }
 
-  .articulo__autor {
+  .articulo-autor {
     font-size: clamp(1rem, 2vw, 1.5rem);
-    font-style: italic;
     text-align: center;
+    font-style: italic;
   }
 
   /* Contenido principal como contenedor */
-  .articulo__contenido {
-    background-color: v.$color-main;
-    border-radius: v.$border-radius-md;
-    container-type: inline-size;
-    container-name: articulo;
+  .articulo-contenido {
     padding: v.$space-3;
+    border-radius: v.$border-radius-md;
+    background-color: v.$color-main;
+    container-name: articulo;
+    container-type: inline-size;
   }
 }
 
@@ -66,63 +66,63 @@
    ------------------------------- */
 @layer components {
   /* Texto */
-  .articulo__texto {
-    font-family: v.$font-body;
+  .articulo-texto {
+    color: v.$color-text;
     font-size: v.$font-size-base;
     line-height: 1.6;
-    color: v.$color-text;
     text-align: center;
+    font-family: v.$font-body;
 
-    &--grande {
+    &-grande {
       font-size: v.$font-size-xl;
       font-weight: 600;
     }
 
-    &--pequeño {
-      font-size: v.$font-size-sm;
+    &-peq {
       color: v.$color-granate;
+      font-size: v.$font-size-sm;
     }
   }
 
   /* Blockquote */
-  .articulo__cita {
-    font-style: italic;
-    border-left: 4px solid v.$color-granate;
-    padding-left: 1rem;
+  .articulo-cita {
     margin: v.$space-3 0;
     color: v.$color-marron;
     text-align: center;
+    border-left: 4px solid v.$color-granate;
+    font-style: italic;
+    padding-left: 1rem;
 
     cite {
       display: block;
-      margin-top: 0.5rem;
-      font-size: v.$font-size-sm;
       color: v.$color-text;
+      font-size: v.$font-size-sm;
+      margin-top: 0.5rem;
     }
   }
 
   /* Items */
-  .articulo__items {
+  .articulo-items {
     border-top: 2px solid v.$color-marron;
 
     &-titulo {
+      color: v.$color-granate;
       font-size: v.$font-size-lg;
+      text-align: center;
       font-weight: 700;
       margin-bottom: v.$space-2;
-      color: v.$color-granate;
-      text-align: center;
     }
 
     &-lista {
-      list-style: none;
       padding: 0;
+      list-style: none;
     }
   }
 
-  .articulo__item {
+  .articulo-item {
+    color: v.$color-text;
     font-size: v.$font-size-base;
     font-weight: 500;
-    color: v.$color-text;
 
     &-numero {
       display: inline-flex;
@@ -131,31 +131,31 @@
       width: 2rem;
       height: 2rem;
       border-radius: 50%;
-      background-color: v.$color-granate;
       color: v.$color-main;
+      background-color: v.$color-granate;
       font-weight: 700;
     }
   }
 
   /* Receta */
-  .articulo__receta {
+  .articulo-receta {
     border-top: 2px solid v.$color-marron;
 
     &-titulo {
-      font-size: v.$font-size-lg;
-      font-weight: 700;
       color: v.$color-granate;
-      margin-bottom: v.$space-2;
+      font-size: v.$font-size-lg;
       text-align: center;
+      font-weight: 700;
+      margin-bottom: v.$space-2;
     }
 
     &-lista {
-      list-style: none; 
       padding: 0;
+      list-style: none; 
     }
   }
 
-  .articulo__paso {
+  .articulo-paso {
     text-align: center;
 
     &-img {
@@ -167,11 +167,11 @@
     }
 
     p {
-      font-size: v.$font-size-base;
-      line-height: 1.6;
-      color: v.$color-text;
       max-width: 600px;
       margin: 0 auto;
+      color: v.$color-text;
+      font-size: v.$font-size-base;
+      line-height: 1.6;
     }
   }
 }
@@ -181,17 +181,17 @@
    ------------------------------- */
 @layer overrides {
   /* Pseudoclases */
-  .articulo__items-lista:has(.articulo__item-numero) {
-    background-color: v.$color-main;
+  .articulo-items-lista:has(.articulo-item-numero) {
     padding: v.$space-2;
     border-radius: v.$border-radius-sm;
+    background-color: v.$color-main;
   }
 
-  .articulo__texto:is(.articulo__texto--grande, .articulo__texto--pequeño) {
+  .articulo-texto:is(.articulo-texto-grande, .articulo-texto-peq) {
     font-style: italic;
   }
 
-  .articulo__galeria img:where(:first-child) {
+  .articulo-galeria img:where(:first-child) {
     border: 3px solid v.$color-granate;
   }
 
@@ -213,30 +213,30 @@
       max-width: 100%;
     }
 
-    .articulo__paso-img {
+    .articulo-paso-img {
       max-width: 100%;
     }
 
-    .articulo__titulo {
+    .articulo-titulo {
       font-size: clamp(1.75rem, 7vw, 2.75rem); 
     }
 
-    .articulo__texto {
+    .articulo-texto {
       font-size: clamp(1rem, 5vw, 1.25rem); 
     }
 
-    .articulo__texto--grande {
+    .articulo-texto-grande {
       font-size: clamp(1.25rem, 6vw, 1.5rem); 
       font-weight: 600;
     }
   }
 
   /* Dos columnas en pantallas grandes (>=768px) */
-  @container articulo (min-width: 768px) {
+  @container articulo (min-width: 700px) {
     .row {
       display: grid;
-      grid-template-columns: 1fr 1fr;
       gap: v.$space-4;
+      grid-template-columns: 1fr 1fr;
       text-align: center;
       justify-items: center;
     }
@@ -246,10 +246,10 @@
       max-width: 100%;
     }
 
-    .articulo__paso-img {
+    .articulo-paso-img {
+      display: block;
       max-width: 80%;
       margin: 0 auto;
-      display: block;
     }
   }
 }

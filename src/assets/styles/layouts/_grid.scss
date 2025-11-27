@@ -4,13 +4,13 @@
    Layout Grid principal
    ================================ */
 .grid {
+  position: relative;
   display: grid;
   gap: 1rem;
-  padding: 1rem;
-  position: relative;
-  background-color: v.$color-main;
-  color: v.$color-text;
   min-height: 100vh; 
+  padding: 1rem;
+  color: v.$color-text;
+  background-color: v.$color-main;
 }
 
 

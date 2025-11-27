@@ -5,20 +5,20 @@
    ================================ */
 
 .header {
-  background-color: v.$color-main;
-  color: v.$color-granate;
-  padding: 1rem 2rem;
   position: relative;
   z-index: v.$z-header;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-
+  align-items: center;
+  padding: 1rem 2rem;
+  color: v.$color-granate;
+  background-color: v.$color-main;
+  
   /* Botón hamburguesa */
   &__toggle {
     display: none;
-    background: none;
     border: none;
+    background: none;
     cursor: pointer;
 
     @media (max-width: v.$breakpoint-md) {
@@ -37,20 +37,20 @@
 
   /* Menú móvil desplegable */
   &__menu {
-    display: none;
-    flex-direction: column;
-    background-color: v.$color-main;
     position: absolute;
     top: 100%;
     right: 0;
+    display: none;
+    flex-direction: column;
     width: 100%;
     padding: 1rem;
+    background-color: v.$color-main;
 
     &--open {
       display: flex;
     }
 
-    .header__link {
+    .header-link {
       padding: 0.5rem 0;
       font-size: 1.2rem;
     }

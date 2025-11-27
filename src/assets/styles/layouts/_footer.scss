@@ -4,29 +4,30 @@
    Footer global
    ================================ */
 .footer {
-  background-color: v.$color-granate;
+  position: relative;
+  z-index: v.$z-header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 1rem 2rem;
   color: v.$color-main;
   font-size: 0.75rem;
   text-align: center;
-  position: relative;
-  z-index: v.$z-header;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  background-color: v.$color-granate;
 }
 
-.footer__social {
-  margin-top: 1rem;
+.footer-social {
   display: flex;
   justify-content: center;
   gap:0.5rem;
+  margin-top: 1rem;
 }
 
-.footer__social-icon {
+.footer-social-icon {
   width: 32px;       
   height: 32px;      
   object-fit: contain; 
+
   &:hover {
     opacity: 0.7; 
   }
