@@ -16,58 +16,65 @@
 
       <!-- Información de contacto -->
       <section class="row text-center mb-5">
-        <div class="col">
+        <!-- Columna 1 -->
+        <div class="col-12 col-md-4">
           <i class="fa-solid fa-location-dot fa-2x text-danger"></i>
           <p>Palacio de Festivales, Santander</p>
         </div>
-        <div class="col">
+        <!-- Columna 2 -->
+        <div class="col-12 col-md-4">
           <i class="fa-solid fa-phone fa-2x text-danger"></i>
           <p><a href="tel:+34942123456" class="text-decoration-none">+34 942 123 456</a></p>
         </div>
-        <div class="col">
+        <!-- Columna 3 -->
+        <div class="col-12 col-md-4">
           <i class="fa-solid fa-envelope fa-2x text-danger"></i>
           <p><a href="mailto:info@jornadacantabra.com" class="text-decoration-none">info@jornadacantabra.com</a></p>
         </div>
       </section>
 
+      <!-- Formulario -->
       <section>
         <h2 class="text-center mb-4">Envíanos un mensaje</h2>
-        <form id="contacto-form" class="mx-auto" style="max-width: 600px;">
-          <!-- Nombre -->
-          <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" required>
-            <div class="invalid-feedback" id="error-nombre"></div>
-          </div>
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8 col-lg-6">
+            <form id="contacto-form">
+              <!-- Nombre -->
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+                <div class="invalid-feedback" id="error-nombre"></div>
+              </div>
 
-          <!-- Email -->
-          <div class="mb-3">
-            <label for="email" class="form-label">Correo electrónico</label>
-            <input type="email" class="form-control" id="email" name="email" required>
-            <div class="invalid-feedback" id="error-email"></div>
-          </div>
+              <!-- Email -->
+              <div class="mb-3">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+                <div class="invalid-feedback" id="error-email"></div>
+              </div>
 
-          <!-- Mensaje -->
-          <div class="mb-3">
-            <label for="mensaje" class="form-label">Mensaje</label>
-            <textarea class="form-control" id="mensaje" name="mensaje" rows="5" required></textarea>
-            <div class="invalid-feedback" id="error-mensaje"></div>
-          </div>
+              <!-- Mensaje -->
+              <div class="mb-3">
+                <label for="mensaje" class="form-label">Mensaje</label>
+                <textarea class="form-control" id="mensaje" name="mensaje" rows="5" required></textarea>
+                <div class="invalid-feedback" id="error-mensaje"></div>
+              </div>
 
-          <!-- Botón -->
-          <div class="text-center">
-            <button type="submit" class="btn btn-primary">Enviar</button>
+              <!-- Botón -->
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+              </div>
+            </form>
           </div>
-        </form>
+        </div>
 
         <!-- Mensaje de confirmación -->
         <div id="mensaje-confirmacion" class="alert alert-success text-center mt-4 d-none">
           Gracias por tu mensaje, te responderemos pronto.
         </div>
-      </section>
+  </section>
     </main>
     
-
     <include src="./views/footer.html"></include>
     <script type="module" src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
     <script type="module" src="./assets/scripts/header.js"></script>

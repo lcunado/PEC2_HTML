@@ -18,7 +18,7 @@ h1, h2 {
 
 /* Iconos de la sección de información */
 .contacto i {
-  color: v.$color-granate; // sobrescribe el color de Bootstrap
+  color: v.$color-granate; 
 }
 
 /* Links de contacto */
@@ -36,8 +36,6 @@ h1, h2 {
   padding: clamp(0.5rem, 2vw, 1rem) clamp(1rem, 3vw, 2rem);
   color: v.$color-main;
   text-transform: uppercase;
-  background-color: v.$color-marron;
-  border-color: v.$color-marron;
   
   &:hover {
     color: v.$color-main;
@@ -63,48 +61,33 @@ h1, h2 {
 main.container.contacto-contenido {
   container-name: contacto;
   container-type: inline-size;
+  
 }
 
-/* Contenedor estrecho (<700px): columnas apiladas */
-@container contacto (max-width: 700px) {
-  .row {
-    display: flex;
-    flex-direction: column;
-    gap: v.$space-3;
-    text-align: center;
+/* Contenedor pequeño */
+@container contacto (max-width: 500px) {
+  h1, h2 {
+    font-size: clamp(1.25rem, 5vw, 2rem);
   }
 
-  .row .col {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: v.$space-2;
-  }
-
-  form#contacto-form {
-    max-width: 100%; /* formulario ocupa todo el ancho */
-    padding: 0 v.$space-2;
-  }
-
-}
-
-/* Contenedor medio (<1000px): dos columnas para la info */
-@container contacto (min-width: 701px) and (max-width: 1000px) {
-  .row {
-    display: grid;
-    gap: v.$space-3;
-    grid-template-columns: 1fr 1fr;
-    text-align: center;
-    justify-content: center;
-  }
-
-  .row .col {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  form#contacto-form {
-    max-width: 80%; /* formulario más estrecho en pantallas medianas */
+  .alert-success {
+    padding: v.$space-2;
+    font-size: v.$font-size-sm;
   }
 }
+
+/* Contenedor mediano */
+@container contacto (min-width: 501px) and (max-width: 800px) {
+  h1, h2 {
+    font-size: clamp(2rem, 3vw, 3.5rem);
+  }
+
+  .alert-success {
+    padding: v.$space-4;
+    font-size: v.$font-size-lg;
+  }
+}
+
+
 
 

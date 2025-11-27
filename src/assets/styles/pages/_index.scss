@@ -142,8 +142,8 @@
    Container queries
    ================================ */
 
-/* Contenedor estrecho (<600px): todo en una columna */
-@container home (max-width: 600px) {
+/* Contenedor estrecho (<500px): todo en una columna */
+@container home (max-width: 500px) {
   .grid-home {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -182,7 +182,7 @@
   }
 }
 
-/* Navegadores que no soportan*/
+/* Navegadores que no soportan grid */
 @supports not (display: grid) {
   .grid-home {
     display: flex;
@@ -204,7 +204,7 @@
   }
 
   .grid-subtitulo {
-    writing-mode: horizontal-tb; /* evita el texto vertical */
+    writing-mode: horizontal-tb; 
   }
 }
 

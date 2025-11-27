@@ -1,103 +1,88 @@
 @use "../abstracts/variables" as v;
 
-* {
-  box-sizing: border-box;
-}
+/* Orden de capas */
+@layer base, components, overrides;
 
-/* ================================
-   Página de participantes 
-   ================================ */
-
-/* Contenedor de la retícula con flexbox */
-.grid--participantes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;   
-  gap: v.$space-3;
-  padding: v.$space-2;
-  container-name: participantes; 
-  container-type: inline-size;   
-  margin-bottom: v.$space-2;
-  margin-left: v.$space-4;
-  margin-right: v.$space-4;
-}
-
-/* Tarjeta de participante */
-.participante {
-  flex: 1 1 250px;
-  flex-direction: column;  
-  justify-content: space-between;      
-  align-items: center; 
-  max-width: 300px;
-  min-height: 380px;
-  padding: 1rem;    
-  border-radius: v.$border-radius-md; 
-  box-shadow: v.$shadow-sm;   
-  text-align: center;   
-  background-color: v.$color-main;
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: translateY(-4px);
+/* Base: el wrapper es el container */
+@layer base {
+  .participantes-wrapper {
+    margin: 0 v.$space-4 v.$space-2;
+    padding: v.$space-2;
+    container-name: participantes;
+    container-type: inline-size;
   }
 
-  &__img {
-    width: 100%;
-    height: 180px;
-    border-radius: v.$border-radius-sm; 
-    margin-bottom: 0.75rem;
-    object-fit: cover;
-  }
+  .grid--participantes {
+    display: grid;
+    gap: v.$space-3;
 
-  &__name {
-    margin: 0.5rem 0; 
-    color: v.$color-granate;                       
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    font-weight: 700;
-  }
-
-  &__desc {
-    display: flex;
-    flex-grow: 1;
-    align-items: center;
-    color: v.$color-marron;                               
-    font-size: clamp(0.875rem, 1.5vw, 1rem);
-    
+    /* Fallback inicial: 1 columna */
+    grid-template-columns: 1fr;
   }
 }
 
-/* Título de la página */
-.participantes-titulo {
-  color: v.$color-granate;
-  font-size: clamp(2rem, 3.5vw, 3rem); 
-  text-align: center;  
-  font-family: v.$font-header;
-  font-weight: 500;
-  margin-bottom: v.$space-3;             
-  margin-top: v.$space-3;
-}
-
-/* ================================
-   Container queries
-   ================================ */
-
-/* Cuando el contenedor es estrecho (<500px), las tarjetas ocupan todo el ancho */
-@container participantes (max-width: 500px) {
+/* Components: tarjeta */
+@layer components {
   .participante {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    padding: 1rem;
+    border-radius: v.$border-radius-md;
+    box-shadow: v.$shadow-sm;
+    text-align: center;
+    background-color: v.$color-main;
+    justify-items: center;
+    transition: transform 0.3s ease;
 
+    &:hover { transform: translateY(-4px); }
+
+    &__img {
+      width: 100%;
+      height: 180px;
+      border-radius: v.$border-radius-sm;
+      margin-bottom: 0.75rem;
+      object-fit: cover;
+    }
+
+    &__name {
+      margin: 0.5rem 0;
+      color: v.$color-granate;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-weight: 700;
+    }
+
+    &__desc {
+      display: grid;
+      place-items: center;
+      width: 100%;
+      color: v.$color-marron;
+      font-size: clamp(0.875rem, 1.5vw, 1rem);
+    }
+  }
+  
   .participantes-titulo {
-    color: v.$color-marron; 
-    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: v.$space-3;
+    margin-top: v.$space-4;
   }
 }
 
-/* Cuando el contenedor es medio (<800px), las tarjetas se muestran de dos en dos */
-@container participantes (max-width: 800px) {
-  .participante {
-    flex: 1 1 45%;
-    max-width: 45%;
+/* Overrides: container queries basadas en el wrapper */
+@layer overrides {
+  /* Pequeñas: 1 columna */
+  @container participantes (max-width: 500px) {
+    .grid--participantes { grid-template-columns: 1fr; }
+  }
+
+  /* Medianas: 2 columnas */
+  @container participantes (min-width: 501px) and (max-width: 800px) {
+    .grid--participantes { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* Grandes: 3 columnas */
+  @container participantes (min-width: 801px) {
+    .grid--participantes { grid-template-columns: repeat(3, 1fr); }
   }
 }

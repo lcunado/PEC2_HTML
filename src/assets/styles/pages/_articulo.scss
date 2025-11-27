@@ -199,9 +199,8 @@
      Container queries
      ================================ */
 
-  /* Una columna en pantallas pequeñas (<700px) */ 
-  @container articulo (max-width: 700px) { 
-
+  /* Una columna en pantallas pequeñas */ 
+  @container articulo (max-width: 500px) { 
     .articulo-paso-img { 
       max-width: 100%; 
     } 
@@ -219,9 +218,8 @@
     } 
   } 
     
-  /* Dos columnas en pantallas grandes (>=768px) */ 
-  @container articulo (min-width: 768px) { 
-      
+  /* Dos columnas en pantallas grandes */ 
+  @container articulo (min-width: 501px) { 
     .articulo-texto-grande { 
       font-size: clamp(1.55rem, 7vw, 2rem); 
     }
@@ -231,7 +229,7 @@
       max-width: 80%; 
       margin: 0 auto; 
     } 
-  } 
+  }  
 }
 
 
