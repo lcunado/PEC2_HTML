@@ -60,7 +60,7 @@ h1, h2 {
    ================================ */
 
 /* Declaramos el contenedor principal */
-main.container {
+main.container.contacto-contenido {
   container-name: contacto;
   container-type: inline-size;
 }
@@ -94,6 +94,7 @@ main.container {
     gap: v.$space-3;
     grid-template-columns: 1fr 1fr;
     text-align: center;
+    justify-content: center;
   }
 
   .row .col {
